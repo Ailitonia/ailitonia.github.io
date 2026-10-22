@@ -6,7 +6,7 @@
 title: Ailitonia Main Thread
 subtitle: 'Code, Insights, Curiosity, Daydreams.'
 description: '一个关于编程、见解、好奇心和白日梦的博客。'
-keywords: Ailitonia, Programming, Coding, Tech Blog, 技术分享, 随笔, 生活记录, 思考与灵感
+keywords: Programming, Coding, Tech Blog, 技术分享, 随笔
 author: Ailitonia
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -40,7 +40,10 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -89,16 +92,41 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include:
-exclude:
+include: []
+exclude: []
 ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: redefine
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Generator Sitemap
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  rel: false
+  tags: true
+  categories: true
+
+# Generator Feed
+feed:
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 20
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  autodiscovery: true
